@@ -1,12 +1,12 @@
 const sponsorlijst = [
-  { id: 1, type: "big", info: { img: "hubo.png", url: "https://www.hubo.be" } },
+  { id: 1, 
+    type: "big", 
+    info: { img: "hubo.png", url: "https://www.hubo.be" } 
+  },
   {
     id: 2,
     type: "big",
-    info: {
-      img: "vandamme.png",
-      url: "https://www.vandamme-aanhangwagens.be/",
-    },
+    info: { img: "vandamme.png", url: "https://www.vandamme-aanhangwagens.be/",},
   },
   {
     id: 3,
@@ -58,6 +58,13 @@ const sponsorlijst = [
 const big = document.querySelector("#big");
 const middle = document.querySelector("#middle");
 const small = document.querySelector("#small");
+const verwijderFoto = document.querySelector("#verwijderen")
+
+verwijderFoto.addEventListener("click", () => {
+  sponsorlijst.forEach(sponsor => {
+    sponsor.type = "invisible"
+  });
+})
 
 sponsorlijst
   .filter((item) => item.type == "big")
